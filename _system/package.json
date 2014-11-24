@@ -1,0 +1,46 @@
+{
+  "name": "konstruct.boilerplate",
+  "version": "0.4.1",
+  "description": "Konstruct Boilerplate is the perfect starting point for your next Konstruct project.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://traaidmark@github.com/traaidmark/konstruct-boilerplate.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "jquery",
+    "gulp",
+    "bower",
+    "konstruct"
+  ],
+  "author": [
+    "Adrian Kirsten"
+  ],
+  "license": "Apache License, Version 2.0",
+  "bugs": {
+    "url": "https://github.com/traaidmark/konstruct-boilerplate/issues"
+  },
+  "homepage": "http://traaidmark.github.io/Konstruct/",
+  "devDependencies": {
+    "gulp": "~3.8.6",
+    "express": "~4.8.3",
+    "gulp-rename": "~1.2.0",
+    "gulp-minify-css": "~0.3.7",
+    "gulp-autoprefixer": "0.0.8",
+    "gulp-ruby-sass": "~0.7.1",
+    "run-sequence": "~0.3.6",
+    "gulp-util": "~3.0.0",
+    "gulp-clean": "~0.3.1",
+    "gulp-concat": "~2.3.4",
+    "require-dir": "~0.1.0",
+    "connect-livereload": "~0.4.0",
+    "tiny-lr": "~0.1.0",
+    "jshint-stylish": "~0.4.0",
+    "gulp-jshint": "~1.8.4"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "konstruct.boilerplate",
+  "version": "0.4.1",
+  "authors": [
+    "Adrian Kirsten"
+  ],
+  "description": "Konstruct Boilerplate is the perfect starting point for your next Konstruct project.",
+  "main": "index.html",
+  "keywords": [
+    "Html",
+    "css",
+    "konstruct"
+  ],
+  "license": "Apache License, Version 2.0",
+  "homepage": "http://traaidmark.github.io/Konstruct/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "html5shiv": "~3.7.2",
+    "jquery": "~2.1.1",
+    "modernizr": "~2.8.3",
+    "normalize.css": "~3.0.1",
+    "konstruct.config": "*",
+    "konstruct.foundation": "*",
+    "konstruct.cement": "*",
+    "konstruct.bricks": "*",
+    "konstruct.site": "*",
+    "konstruct.glue": "*"
+  }
+}

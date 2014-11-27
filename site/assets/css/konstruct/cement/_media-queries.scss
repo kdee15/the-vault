@@ -1,0 +1,33 @@
+// MIXINS LAYER [MEDIA QUERIES] ##############################################
+
+// DESCRIPTION: A media query generator, used throughout Konstruct.
+// USAGE: You can set up your media queries in the 'config/media-queries' file.
+
+@mixin media-query($media-query){
+
+    $breakpoint-found: false;
+
+    @each $breakpoint in $breakpoints{
+        $name: nth($breakpoint, 1);
+        $declaration: nth($breakpoint, 2);
+
+        @if $media-query == $name and $declaration{
+            $breakpoint-found: true;
+
+            @media only screen and #{$declaration}{
+                @content;
+            }
+        }
+    }
+
+    @if $breakpoint-found == false{
+        body:after {
+
+            content: "No Media Query Found.";
+            background: $red;
+
+        }
+    }
+}
+	
+// END OF FILE ##############################################

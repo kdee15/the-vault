@@ -1,1 +1,7 @@
 *.esproj
+
+_system/node_modules
+_system/_bower.cache
+_system/.sass-cache
+
+site/.sass-cache

@@ -1,0 +1,14 @@
+// MIXINS LAYER [FONTS] ##############################################
+
+// DESCRIPTION: A mixin to help you take the heavy lifting out of your font setups.
+// USAGE: @include font($lato, 300, normal);
+
+@mixin font($font-family, $font-weight, $font-style){
+
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $font-style;
+
+}
+	
+// END OF FILE ##############################################

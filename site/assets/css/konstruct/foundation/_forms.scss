@@ -1,0 +1,159 @@
+// CORE LAYER [FORMS] ##############################################
+
+	// A. BASIC FORM ELEMENTS ++++++++++++++++++++++++++++++++++++
+
+		form {
+
+			// A.1. Labels 
+				label { 
+					width: 95%;
+					line-height: $baseline; 
+					display: block; 
+				}
+			// A.1. End
+
+			// A.2. Inputs
+				input[type="text"],
+				input[type="password"],
+				input[type="select"],
+				input[type="search"] {
+					width: 90%; 
+					margin-bottom: 0px; 
+					display: block; 
+					padding: $baseline / 2;
+				}
+			// A.2. End
+
+			// A.3. Textarea
+				textarea {
+					padding: $baseline / 2;
+					width: 90%; 
+					height: 200px;
+					line-height: $baseline; 
+					margin-bottom: 5px; 
+					display: block; 
+					clear: left; 
+					overflow: auto; 
+				}
+			// A.3. End
+
+			// A.4. Radio & Check boxes
+				input[type="radio"],
+				input[type="checkbox"] { 
+					margin: 0px $baseline / 3 0px $baseline / 2;
+					display: inline-block;
+				}
+			// A.4. End
+		}
+	// A. END ++++++++++++++++++++++++++++++++++++
+	
+	// B. ENHANCED FORM ELEMENTS ++++++++++++++++++++++++++++++++++++
+	
+		// B.1. Radio & Checkboxes
+		
+			.radio,
+			.checkbox {
+				padding: 0 0 0 0!important;
+				
+				ul {
+					@extend .list;
+					margin-bottom: -1px!important;
+				}
+			}
+			
+		// B.1. End
+		
+		// B.2. Textarea
+			
+			.textarea {
+				margin-bottom: $baseline - 1px;
+			}
+			
+		// B.2. End
+	
+	// B. END ++++++++++++++++++++++++++++++++++++
+	
+legend							{ padding-bottom: 24px; }
+
+
+
+
+input[type="file"]				{ margin: 0px 6px 3px 6px; }
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"]			{ position: relative; top: 5px; margin-bottom: 24px; }
+
+
+
+		
+	// A. END ++++++++++++++++++++++++++++++++++++
+	
+	// B. BETTER FORM ELEMENTS ++++++++++++++++++++++++++++++++++++
+		
+		form {
+			margin-bottom: $baseline;
+			
+			// B.1. Field Item
+				.field-item {
+					margin-bottom: $baseline;
+					padding: 0 0 2px 0;
+					
+					// B.1.1. Text Fields
+					input, textarea {
+						
+					}
+					
+				}
+			// B.1. End
+			
+			// B.1. Text fields
+				input {
+					border: solid 1px $grayLight;
+				}
+			
+			// B.1. End
+			
+			// B.1. Text fields
+			
+			// B.1. End
+		
+		}
+		
+	// B. END ++++++++++++++++++++++++++++++++++++
+	
+	// C. FORM ORIENTATIONS ++++++++++++++++++++++++++++++++++++
+		
+		form {
+		
+			// B.1. Stacked forms
+			&.stacked {
+				
+				label {
+					display: block;
+				}
+				
+				.radio, .checkbox {
+					label {
+						display: inline-block;
+					}
+				}
+				
+			}
+			
+			// B.2. Inline forms
+			&.inline {
+			
+				label {
+					display: inline-block;
+					width: 150px;
+					line-height: $baseline;
+				}
+			
+			}
+		
+		}
+		
+	// C. END ++++++++++++++++++++++++++++++++++++
+
+// END OF FILE ##############################################

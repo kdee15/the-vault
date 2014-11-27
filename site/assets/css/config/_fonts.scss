@@ -1,0 +1,49 @@
+// CONFIGURATION LAYER [FONTS & STACKS] ##############################################
+
+
+	// A. FONTS ++++++++++++++++++++++++++++++++++++++++++++++++
+	
+	    // A.1. Import Source Sans
+		@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600);
+		
+		// A.2. Import Lato
+		@import url(http://fonts.googleapis.com/css?family=Lato:300);
+		
+		
+	// B. FONT STACKS ++++++++++++++++++++++++++++++++++++++++++++++++
+
+		// B.1 Helvetica Font Stack
+		$helvetica: 	"Helvetica Neue", Helvetica, Arial, sans-serif;
+		
+		// B.5 Monospace Font Stack
+		$monospace: 	"Bitstream Vera Sans Mono", Consolas, Courier, monospace;
+		
+		// B.6 Arial Font Stack
+		$arial:			Arial, Helvetica, sans-serif;
+		
+		// B.7 Source Sans Font Stack
+		$source:	'Source Sans Pro', sans-serif;
+		
+		// B.7 Source Sans Font Stack
+		$lato:	'lato', sans-serif;
+		
+		
+		// ADD YOUR OWN FONT STACKS HERE
+		
+		
+	// C. FONT SETUP ++++++++++++++++++++++++++++++++++++++++++++++++
+
+		$base-font:			$lato; // Change your default font type.
+		$base-size: 		16px; 		// Choose your base font size. I like 16px and Relative Readability.
+		$baseline: 			24px; 		// Choose your Line Height.
+		
+	// D. FONT SIZING ++++++++++++++++++++++++++++++++++++++++++++++++
+	
+		$x-large:			2em; 		// 32px
+		$large:				1.5em; 		// 24px
+		$medium:			1.125em; 	// 18px
+		$normal:			1em; 		// 16px
+		$small:				0.75em; 	// 12px
+		$x-small:			0.625em; 	// 10px
+
+// END OF FILE  ##############################################

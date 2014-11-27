@@ -1,0 +1,84 @@
+// SITE GROUP  ########################################################################################################
+
+// PROTIP:        Keep these files tidy and up to date. Document the index as well as possible. This will save your
+//                life in the long run. 
+
+// CONVENTIONS:   Name files with the number of their order & section. Match file names to the index.
+
+// =====================  INDEX  =====================
+// ==
+// == 1. OBJECTS
+// ===== 1.1. Variables
+// ===== 1.2. Mixins
+// ===== 1.3. Typography
+// ==
+// == 2. SECTIONS
+// ===== 2.1. Masthead
+// ===== 2.2. Mast
+// ===== 2.3. Footend
+// ==
+// == 3. PAGES
+// ===== 3.1. Homepage
+// ==
+// =====================  INDEX  =====================
+
+// 1. OBJECTS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// DESCRIPTION:
+// This section deals with common / repeated components
+// that comes together to build the website. 
+// 
+// Each component should ideally be an isolated block
+// structure that can stand on it's own, and live in
+// in any context.
+
+    // 1.1. Variables
+    @import	"_1.1-object--variables";
+
+    // 1.2. Animations
+    @import	"_1.2-object--mixins";
+
+    // 1.5. Typography
+    @import	"_1.3-object--typography";
+
+// 1. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// 2. SECTIONS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// DESCRIPTION:
+// Sections deal with the context of major / specific
+// areas that make up the site.
+// 
+// Sections can be seen as sitewide styling. And uses 
+// the above objects in a meaningful manner to build 
+// up any given page.
+
+    // 2.1. Masthead
+    @import	"_2.1-section--masthead";
+
+    // 2.2. Mast
+    @import	"_2.2-section--mast";
+
+    // 2.3. Footend
+    @import	"_2.3-section--footend";
+
+    // 2.3. Footend
+    @import	"_2.4-section--sections";
+
+// 2. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// 3. PAGES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// DESCRIPTION:
+// Pages deal with specific pages, and is restricted
+// to it. It is used as a override on the above stuff,
+// or to do custom out-of-context work.
+
+// These files should almost be empty!
+
+    // 3.1. Homepage
+    @import	"_3.1-page--home";
+
+// 3. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// END OF FILE ##############################################

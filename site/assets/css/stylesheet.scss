@@ -1,0 +1,38 @@
+// KONSTRUCT.GLUE [SINGLE CORE] ##############################################
+
+// 	This file is the end-point generator for the Konstruct Framework. If set up properly, it should generate to 
+//	css/Stylesheet.css in your project root. 
+
+//  You can quickly enable / disable files you don't need by commenting them out. 
+//	If you are very sure you won't need them in future, simply delete the line. 
+
+// 000000000000000000000000000000000000000000000000000000000000000000
+
+	// A. CONFIGURATION ++++++++++++++++++++++++++++++++++++++++++++++
+
+        @import "config/config";  
+
+	// B. ADD CEMENT[MIXINS] ++++++++++++++++++++++++++++++++++++++++++++++
+
+		@import	"konstruct/cement/mixins";
+
+	// C. IMPORTANT COMPONENTS ++++++++++++++++++++++++++++++++++++++++++++++
+	
+		// C.1. Normalize.css
+		@import	"konstruct/vendor/normalize.css";
+
+	// D. CORE ++++++++++++++++++++++++++++++++++++++++++++++
+
+		@import "konstruct/foundation/core";
+	
+	// E. BRICKS ++++++++++++++++++++++++++++++++++++++++++++++
+
+		@import "konstruct/bricks/bricks";
+
+	// F. SITE ++++++++++++++++++++++++++++++++++++++++++++++
+
+		@import "site/site";
+	
+// 000000000000000000000000000000000000000000000000000000000000000000
+	
+// End of File - Thanks for using Konstruct! Please help make it better!

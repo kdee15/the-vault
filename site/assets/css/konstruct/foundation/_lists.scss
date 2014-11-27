@@ -1,0 +1,59 @@
+// CORE LAYER [LISTS] ##############################################
+
+	// A. LIST BUILD ++++++++++++++++++++++++++++++
+		
+		.list {
+			margin: 0;
+			padding: 0;
+			
+			li {
+				margin: 0;
+				list-style: none;
+				
+				a {
+					padding: 0 5px;
+				}
+			}
+			
+			// A.1 Horizontal
+				&.horizontal {
+					li {
+						display: inline;
+						
+						a {
+							display: inline-block;
+						}
+					}
+				}
+			// A.1 End
+			
+			// A.2 Vertical
+				&.vertical {
+					li {
+						display: block;
+						
+						a {
+							display: block;
+						}
+					}
+				}
+			// A.2 End
+			
+			// A.3 Variations
+				&.left {
+					text-align: left;
+				}
+				&.center {
+					text-align: center;
+				}
+				&.right {
+					text-align: right;
+				}
+			// A.3 End
+			
+		}
+		
+	// A. End
+	
+
+// END OF FILE ##############################################

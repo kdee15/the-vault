@@ -1,0 +1,288 @@
+// CORE LAYER [SCAFFOLDING] ##############################################
+
+		
+	/**
+	 * Drop relative positioning into silent classes which can’t take advantage of
+	 * the `[class*="push--"]` and `[class*="pull--"]` selectors.
+	 */
+	@mixin silent-relative(){
+	    @if $use-silent-classes == true{
+	        position:relative;
+	    }
+	}
+	
+	
+	
+	
+	
+	/*------------------------------------*\
+	    $GRID SETUP
+	\*------------------------------------*/
+	/**
+	 * 1. Allow the grid system to be used on lists.
+	 * 2. Remove any margins and paddings that might affect the grid system.
+	 * 3. Apply a negative `margin-left` to negate the columns’ gutters.
+	 */
+	#{$class-type}grid{
+	    list-style:none;                /* [1] */
+	    margin:0;                       /* [2] */
+	    padding:0;                      /* [2] */
+	    margin-left:-$gutter;           /* [3] */
+	    @if $use-markup-fix != true{
+	        letter-spacing:-0.31em;
+	    }
+	}
+	
+	@if $use-markup-fix != true{
+	    /* Opera hack */
+	    .opera:-o-prefocus,
+	    #{$class-type}grid{
+	        word-spacing:-0.43em;
+	    }
+	}
+	
+	
+	    /**
+	     * 1. Cause columns to stack side-by-side.
+	     * 2. Space columns apart.
+	     * 3. Align columns to the tops of each other.
+	     * 4. Full-width unless told to behave otherwise.
+	     * 5. Required to combine fluid widths and fixed gutters.
+	     */
+	    #{$class-type}grid__item{
+	        display:inline-block;           /* [1] */
+	        padding-left:$gutter;           /* [2] */
+	        vertical-align:top;             /* [3] */
+	        @if $mobile-first == true{
+	            width:100%;                 /* [4] */
+	        }
+	        -webkit-box-sizing:border-box;  /* [5] */
+	           -moz-box-sizing:border-box;  /* [5] */
+	                box-sizing:border-box;  /* [5] */
+	        @if $use-markup-fix != true{
+	            letter-spacing:normal;
+	            word-spacing:normal;
+	        }
+	    }
+	
+	
+	/**
+	 * Reversed grids allow you to structure your source in the opposite order to
+	 * how your rendered layout will appear. Extends `.grid`.
+	 */
+	#{$class-type}grid--rev{
+	    direction:rtl;
+	    text-align:left;
+	
+	    > #{$class-type}grid__item{
+	        direction:ltr;
+	        text-align:left;
+	    }
+	}
+	
+	
+	/**
+	 * Gutterless grids have all the properties of regular grids, minus any spacing.
+	 * Extends `.grid`.
+	 */
+	#{$class-type}grid--full{
+	    margin-left:0;
+	
+	    > #{$class-type}grid__item{
+	        padding-left:0;
+	    }
+	}
+	
+	
+	/**
+	 * Align the entire grid to the right. Extends `.grid`.
+	 */
+	#{$class-type}grid--right{
+	    text-align:right;
+	
+	    > #{$class-type}grid__item{
+	        text-align:left;
+	    }
+	}
+	
+	
+	/**
+	 * Centered grids align grid items centrally without needing to use push or pull
+	 * classes. Extends `.grid`.
+	 */
+	#{$class-type}grid--center{
+	    text-align:center;
+	
+	    > #{$class-type}grid__item{
+	        text-align:left;
+	    }
+	}
+	
+	
+	/**
+	 * Align grid cells vertically (`.grid--middle` or `.grid--bottom`). Extends
+	 * `.grid`.
+	 */
+	#{$class-type}grid--middle{
+	
+	    > #{$class-type}grid__item{
+	        vertical-align:middle;
+	    }
+	}
+	
+	#{$class-type}grid--bottom{
+	
+	    > #{$class-type}grid__item{
+	        vertical-align:bottom;
+	    }
+	}
+	
+	
+	/**
+	 * Create grids with narrower gutters. Extends `.grid`.
+	 */
+	#{$class-type}grid--narrow{
+	    margin-left:-($gutter / 2);
+	
+	    > #{$class-type}grid__item{
+	        padding-left:$gutter / 2;
+	    }
+	}
+	
+	
+	/**
+	 * Create grids with wider gutters. Extends `.grid`.
+	 */
+	#{$class-type}grid--wide{
+	    margin-left:-($gutter * 2);
+	
+	    > #{$class-type}grid__item{
+	        padding-left:$gutter * 2;
+	    }
+	}
+	
+	
+	
+	
+	
+	/*------------------------------------*\
+	    $WIDTHS
+	\*------------------------------------*/
+	/**
+	 * Create our width classes, prefixed by the specified namespace.
+	 */
+	@mixin device-type($namespace:""){
+	
+	
+	    /**
+	     * Whole
+	     */
+	    #{$class-type}#{$namespace}one-whole         { width:100%; }
+	
+	
+	    /**
+	     * Halves
+	     */
+	    #{$class-type}#{$namespace}one-half          { width:50%; }
+	
+	
+	    /**
+	     * Thirds
+	     */
+	    #{$class-type}#{$namespace}one-third         { width:33.333%; }
+	    #{$class-type}#{$namespace}two-thirds        { width:66.666%; }
+	
+	
+	    /**
+	     * Quarters
+	     */
+	    #{$class-type}#{$namespace}one-quarter       { width:25%; }
+	    #{$class-type}#{$namespace}two-quarters      { @extend #{$class-type}#{$namespace}one-half; }
+	    #{$class-type}#{$namespace}three-quarters    { width:75%; }
+	
+	
+	    /**
+	     * Fifths
+	     */
+	    #{$class-type}#{$namespace}one-fifth         { width:20%; }
+	    #{$class-type}#{$namespace}two-fifths        { width:40%; }
+	    #{$class-type}#{$namespace}three-fifths      { width:60%; }
+	    #{$class-type}#{$namespace}four-fifths       { width:80%; }
+	
+	
+	    /**
+	     * Sixths
+	     */
+	    #{$class-type}#{$namespace}one-sixth         { width:16.666%; }
+	    #{$class-type}#{$namespace}two-sixths        { @extend #{$class-type}#{$namespace}one-third; }
+	    #{$class-type}#{$namespace}three-sixths      { @extend #{$class-type}#{$namespace}one-half; }
+	    #{$class-type}#{$namespace}four-sixths       { @extend #{$class-type}#{$namespace}two-thirds; }
+	    #{$class-type}#{$namespace}five-sixths       { width:83.333%; }
+	
+	
+	    /**
+	     * Eighths
+	     */
+	    #{$class-type}#{$namespace}one-eighth        { width:12.5%; }
+	    #{$class-type}#{$namespace}two-eighths       { @extend #{$class-type}#{$namespace}one-quarter; }
+	    #{$class-type}#{$namespace}three-eighths     { width:37.5%; }
+	    #{$class-type}#{$namespace}four-eighths      { @extend #{$class-type}#{$namespace}one-half; }
+	    #{$class-type}#{$namespace}five-eighths      { width:62.5%; }
+	    #{$class-type}#{$namespace}six-eighths       { @extend #{$class-type}#{$namespace}three-quarters; }
+	    #{$class-type}#{$namespace}seven-eighths     { width:87.5%; }
+	
+	
+	    /**
+	     * Tenths
+	     */
+	    #{$class-type}#{$namespace}one-tenth         { width:10%; }
+	    #{$class-type}#{$namespace}two-tenths        { @extend #{$class-type}#{$namespace}one-fifth; }
+	    #{$class-type}#{$namespace}three-tenths      { width:30%; }
+	    #{$class-type}#{$namespace}four-tenths       { @extend #{$class-type}#{$namespace}two-fifths; }
+	    #{$class-type}#{$namespace}five-tenths       { @extend #{$class-type}#{$namespace}one-half; }
+	    #{$class-type}#{$namespace}six-tenths        { @extend #{$class-type}#{$namespace}three-fifths; }
+	    #{$class-type}#{$namespace}seven-tenths      { width:70%; }
+	    #{$class-type}#{$namespace}eight-tenths      { @extend #{$class-type}#{$namespace}four-fifths; }
+	    #{$class-type}#{$namespace}nine-tenths       { width:90%; }
+	
+	
+	    /**
+	     * Twelfths
+	     */
+	    #{$class-type}#{$namespace}one-twelfth       { width:8.333%; }
+	    #{$class-type}#{$namespace}two-twelfths      { @extend #{$class-type}#{$namespace}one-sixth; }
+	    #{$class-type}#{$namespace}three-twelfths    { @extend #{$class-type}#{$namespace}one-quarter; }
+	    #{$class-type}#{$namespace}four-twelfths     { @extend #{$class-type}#{$namespace}one-third; }
+	    #{$class-type}#{$namespace}five-twelfths     { width:41.666% }
+	    #{$class-type}#{$namespace}six-twelfths      { @extend #{$class-type}#{$namespace}one-half; }
+	    #{$class-type}#{$namespace}seven-twelfths    { width:58.333%; }
+	    #{$class-type}#{$namespace}eight-twelfths    { @extend #{$class-type}#{$namespace}two-thirds; }
+	    #{$class-type}#{$namespace}nine-twelfths     { @extend #{$class-type}#{$namespace}three-quarters; }
+	    #{$class-type}#{$namespace}ten-twelfths      { @extend #{$class-type}#{$namespace}five-sixths; }
+	    #{$class-type}#{$namespace}eleven-twelfths   { width:91.666%; }
+	
+	
+	}
+	
+	
+	/**
+	 * Our regular, non-responsive width classes.
+	 */
+	@include device-type();
+	
+	
+	/**
+	 * Our responsive classes, if we have enabled them.
+	 */
+	@if $responsive == true{
+	
+	    @each $name in $breakpoint-has-widths {
+	        @include media-query($name) {
+	           @include device-type('#{$name}--');
+	        }
+	    }
+	
+	
+	}
+
+// END OF FILE ##############################################

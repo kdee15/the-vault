@@ -1,0 +1,222 @@
+// CORE LAYER [TYPOGRAPHY] ##############################################
+	
+	// A. HEADINGS ++++++++++++++++++++++++++++++++++++++++++++++++
+	
+		h1, h2, h3, h4, h5, h6 {
+			font-weight: bold;
+			}
+		
+		h1 {
+			font-size: $x-large;
+			//line-height: $baseline * 2;
+			//margin-top: 0;
+			margin-bottom: $baseline * 2;
+			
+			}
+		h2 {
+			font-size: $large;
+			//line-height: $baseline * 2;
+			//margin-top: $baseline;
+			margin-bottom: $baseline;
+			}
+		h3 {
+			font-size: $medium;
+			//line-height: $baseline * 2;
+			margin-top: $baseline;
+			margin-bottom: 0;
+			}
+		h4 {
+			font-size:  $normal;
+			margin-bottom: $baseline;
+			//line-height: $baseline;
+		}
+		h5 {
+			font-size: $small;
+			margin-bottom: $baseline;
+			//line-height: $baseline;
+			}
+		h6 {
+			font-size: $x-small;
+			//line-height: $baseline;
+			//text-transform: uppercase;
+		}
+		
+	// A. END ++++++++++++++++++++++++++++++++++++++++++++++++
+	
+	// B. BODY COPY ++++++++++++++++++++++++++++++++++++++++++++++++
+	
+		// B.1 Paragraph	
+		body,
+		p {
+			font-family: $base-font;
+			line-height: $baseline;
+			margin: 0 0 $baseline 0;
+			color: $grayDark;
+		}
+		
+		// B.2 Emphasis
+		strong,
+		b {
+			font-weight: bold;
+		}
+		em {
+		}
+		
+		// B.3 Code blocks
+		code,
+		pre {
+		
+		}
+		code {
+			line-height: $baseline;
+			margin: 0;
+		}
+		code:after {
+		}
+		pre {
+			margin: 0 0 $baseline 0;
+		}
+	
+		// B.4 Links
+		
+		a {
+			color: $link-color;
+			text-decoration: none;
+			&:hover {
+				color: $link-hover;
+				text-decoration: underline;
+			}
+		}
+	
+		// B.5 HR Lines
+		
+		hr {
+		  margin: $baseline - 1 0;
+		  border: 0;
+		  border-bottom: 1px solid $gray;
+		  line-height: $baseline;
+		}
+		
+		
+	// B. END ++++++++++++++++++++++++++++++++++++++++++++++++
+	
+	// C. LISTS ++++++++++++++++++++++++++++++++++++++++++++++++
+	
+		ol,ul {
+			margin: 0 0 $baseline 0;
+			padding-left: $baseline;
+			ol,ul {
+				margin: 0 ;
+				padding-left: $baseline;
+			}
+			
+			li {
+				line-height: $baseline;
+				margin: 0;
+				padding: 0;
+			}
+		}
+		
+		dl {
+			line-height: $baseline;
+			margin: 0 0 $baseline 0;
+			dt {
+				font-weight: bold;
+			}
+			dd {
+			margin: 0 0 0 $baseline;
+				
+			}
+		}
+	
+	// C. END ++++++++++++++++++++++++++++++++++++++++++++++++
+	
+	// D. TABLES ++++++++++++++++++++++++++++++++++++++++++++++++
+	
+		table {
+		
+			width: 100%;
+			margin: 2px 0 $baseline 0;
+			padding: 0;
+			border: solid 1px $gray;
+			
+			tr {
+				line-height: $baseline;
+				height: auto;
+			}
+			
+			td,th {
+				line-height: $baseline;
+				margin:0;
+				border-right: solid 1px $gray;
+			}
+			
+			th {
+				font-weight: normal;
+				text-align: left;
+			}
+			
+			thead {
+				line-height: $baseline;
+			}
+			
+			tbody {
+				line-height: $baseline;
+			}
+			
+		
+		}
+	
+	// D. END ++++++++++++++++++++++++++++++++++++++++++++++++
+	
+	// E. RESPONSIVE FONT SIZES ++++++++++++++++++++++++++++++++++++++++++++++++
+	
+		body {
+			font-size: 75%; // For the feature phone.
+		}
+	
+		@include media-query(mobile){ 
+		
+			body {
+				font-size: 87.5%;
+			}
+		
+		 }
+		 
+		 @include media-query(tablet){ 
+		 
+		 	body {
+		 		font-size: 87.5%;
+		 	}
+		 
+		  }
+		 
+		 
+		@include media-query(desk){ 
+		
+			body {
+				font-size: 100%;
+			}
+		
+		 }
+		 
+		@include media-query(desk-wide){ 
+		
+			body {
+				font-size: 112.5%;
+			}
+		
+		 }
+	 
+	 // E. END ++++++++++++++++++++++++++++++++++++++++++++++++
+	 
+	 // F. Image Elements ++++++++++++++++++++++++++++++++++++++++++++++++
+	 
+	     img {
+	         display: block;
+	     }
+	 
+	 // F. END ++++++++++++++++++++++++++++++++++++++++++++++++
+	
+
+// END OF FILE ##############################################

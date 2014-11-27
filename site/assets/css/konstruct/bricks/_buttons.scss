@@ -1,0 +1,219 @@
+// BRICK LAYER [BUTTONS] ##############################################
+	
+.button {
+        
+	// A. DEFAULT STYLES ++++++++++++++++++++++++++++++
+		
+        display: inline-block;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        // A.1. SIZE VARIATIONS
+        &.small {
+            padding: $baseline/6 $baseline/4;
+            font-size: $small;
+        }
+        &.medium {
+            padding: $baseline/4 $baseline/2;
+            font-size: $normal;
+        }
+        &.large {
+            padding: $baseline/2 $baseline;
+            font-size: $medium;
+        }
+        // A.1. END
+            
+		
+	// A. END ++++++++++++++++++++++++++++++
+	
+    
+    // B. FLAT BUTTONS ++++++++++++++++++++++++++++++
+    &.flat {
+        
+        // B.1. COLOR MIXIN 
+        @mixin flat-button($button-color){
+            color: $white;
+            background: $button-color;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+            
+            &:before {
+                content: attr(data-hover);
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: inherit;
+                background: darken($button-color, 20%);
+                color: $white;
+                transform: translateX(-100%);
+                transition: 0.5s;
+            }
+            
+            &:hover {
+                
+                &:before {
+                    transform: translateX(0%);
+                    transition: 0.5s;
+                }
+            }
+        };
+        // B.1. END
+    
+        // B.2. DEFAULT COLORS
+        &.blue {
+            @include flat-button($blue);
+        }
+        &.green {
+            @include flat-button($green);
+        }
+        &.yellow {
+            @include flat-button($yellow);
+        }
+        &.orange {
+            @include flat-button($orange);
+        }
+        &.red {
+            @include flat-button($red);
+        }
+        &.pink {
+            @include flat-button($pink);
+        }
+        &.purple {
+            @include flat-button($purple);
+        }
+        // B.2. END
+        
+    }
+	// B. END ++++++++++++++++++++++++++++++
+    
+	// C. OUTLINE BUTTONS ++++++++++++++++++++++++++++++
+    &.outline {
+        
+        // C.1. COLOR MIXIN 
+        @mixin outline-button($button-color){
+            border: solid 2px $button-color;
+            color: $button-color;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+            
+            &:before {
+                content: attr(data-hover);
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: inherit;
+                background: $button-color;
+                color: $white;
+                transform: translateY(-100%);
+                transition: 0.3s;
+            }
+            
+            &:hover {
+                //border-color: lighten($button-color, 20%);
+                transition: 0.3s;
+                &:before {
+                   transform: translateY(0%);
+                    transition: 0.3s; 
+                }
+            }
+            
+        };
+        // C.1. END
+    
+        // C.2. DEFAULT COLORS
+        &.blue {
+            @include outline-button($blue);
+        }
+        &.green {
+            @include outline-button($green);
+        }
+        &.yellow {
+            @include outline-button($yellow);
+        }
+        &.orange {
+            @include outline-button($orange);
+        }
+        &.red {
+            @include outline-button($red);
+        }
+        &.pink {
+            @include outline-button($pink);
+        }
+        &.purple {
+            @include outline-button($purple);
+        }
+        // C.2. END
+    
+    }
+	// C. END ++++++++++++++++++++++++++++++
+    
+    // D. FLAT BUTTONS ++++++++++++++++++++++++++++++
+    &.pill {
+        
+        // D.1. COLOR MIXIN 
+        @mixin flat-button($button-color){
+            color: $white;
+            background: $button-color;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+            border-radius: 12px;
+            
+            &:before {
+                content: attr(data-hover);
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: inherit;
+                background: darken($button-color, 20%);
+                color: $white;
+                transform: translateX(-100%);
+                transition: 0.5s;
+                border-radius: 12px;
+                max-width: 100%;
+            }
+            
+            &:hover {
+                
+                &:before {
+                    transform: translateX(0%);
+                    transition: 0.5s;
+                }
+            }
+        };
+        // D.1. END
+    
+        // D.2. DEFAULT COLORS
+        &.blue {
+            @include flat-button($blue);
+        }
+        &.green {
+            @include flat-button($green);
+        }
+        &.yellow {
+            @include flat-button($yellow);
+        }
+        &.orange {
+            @include flat-button($orange);
+        }
+        &.red {
+            @include flat-button($red);
+        }
+        &.pink {
+            @include flat-button($pink);
+        }
+        &.purple {
+            @include flat-button($purple);
+        }
+        // D.2. END
+        
+    }
+	// D. END ++++++++++++++++++++++++++++++
+
+}
+	
+// END OF FILE ##############################################
